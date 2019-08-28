@@ -1,0 +1,37 @@
+<div class="login-page">
+    <div class="content">
+        <!-- <h1 class="app-name">Sb Admin Material</h1> -->
+        <form class="login-form" fxFlex [formGroup]="form">
+            <div *ngIf="sucesso" class="text-center">
+                <h2 class="app-name">Validação foi feita com sucesso!</h2>
+                <p>Verifique seu e-mail para alterar sua senha.</p>
+                <a [routerLink]="'/login'">Fazer login</a>
+            </div>
+            <ng-container *ngIf="!sucesso">
+                <div class="text-center">
+                    <h2 class="app-name">Cadastro</h2>
+                </div>
+                <div *ngIf="errorLogin" class="text-center danger">
+                    Erro ao validar seu e-mail, verifique se está correto.
+                </div>
+
+                <div fxFlex fxlayout="row" fxlayout.lt-md="column">
+                    <div fxFlexFill>
+                        <mat-form-field class="w-100">
+                            <input matInput formControlName="email" placeholder="Email">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+                    <div fxFlexFill>
+                        <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid"
+                                (click)="alterarSenha()">Login
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+
+        </form>
+    </div>
+</div>
