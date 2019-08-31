@@ -4,7 +4,7 @@
         <form class="login-form" fxFlex [formGroup]="form">
             <div *ngIf="sucesso" class="text-center">
                 <h2 class="app-name">Cadastro realizado com sucesso!</h2>
-                <a [routerLink]="'/login'">Fazer login</a>
+                <a [routerLink]="'/login'">Clique para ir para a home</a>
             </div>
             <ng-container *ngIf="!sucesso">
                 <div class="text-center">
@@ -36,7 +36,7 @@
                 </div>
                 <div fxFlex fxLayout="row" fxLayout.lt-md="column">
                     <div fxFlexFill>
-                        <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid"
+                        <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid || aguardando"
                                 (click)="cadastrar()">Login
                         </button>
                     </div>

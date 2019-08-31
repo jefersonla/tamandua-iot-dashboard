@@ -24,12 +24,17 @@
             </div>
             <div fxFlex fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
                 <div fxFlex fxLayoutAlign="end">
+                    <a [routerLink]="'/cadastrar'" href="javascript:void(0)">Cadastrar novo usuário</a>
+                </div>
+            </div>
+            <div fxFlex fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
+                <div fxFlex fxLayoutAlign="end">
                     <a [routerLink]="'/resetar-senha'" href="javascript:void(0)">Esqueceu sua senha?</a>
                 </div>
             </div>
             <div fxFlex fxLayout="row" fxLayout.lt-md="column">
                 <div fxFlexFill>
-                    <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid"
+                    <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid || aguardando"
                             (click)="onLogin()">Login
                     </button>
                 </div>

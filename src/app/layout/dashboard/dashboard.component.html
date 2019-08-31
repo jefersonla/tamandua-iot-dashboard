@@ -11,21 +11,21 @@
 </div>
 <div class="mb-20" fxLayout="row warp" fxFlex fxLayoutGap="20px">
     <div fxFlex="calc(33.33333% - 20)">
-        <app-stat [bgClass]="'success'" [icon]="'volume_up'" [count]="'13 dB'" [label]="'Som'"></app-stat>
+        <app-stat [bgClass]="'success'" [icon]="'volume_up'" [count]="amplitudeSom + ' dB'" [label]="'Som'"></app-stat>
     </div>
     <div fxFlex="calc(33.33333% - 20)">
-        <app-stat [bgClass]="'warn'" [icon]="'wb_incandescent'" [count]="'45 lums'" [label]="'Luz'"></app-stat>
+        <app-stat [bgClass]="'warn'" [icon]="'wb_incandescent'" [count]="nivelLuminosidade + ' lums'" [label]="'Luz'"></app-stat>
     </div>
     <div fxFlex="calc(33.33333% - 20)">
-        <app-stat [bgClass]="'marrom'" [icon]="'grain'" [count]="'12%'" [label]="'Poeira'"></app-stat>
+        <app-stat [bgClass]="'marrom'" [icon]="'grain'" [count]="nivelPoeira + '%'" [label]="'Poeira'"></app-stat>
     </div>
 </div>
 <div class="mb-20" fxLayout="row warp" fxFlex fxLayoutGap="20px">
     <div fxFlex="calc(33.33333% - 20)">
-        <app-stat [bgClass]="'vermelho'" [icon]="'ac_unit'" [count]="'13 °C'" [label]="'Temperatura'"></app-stat>
+        <app-stat [bgClass]="'vermelho'" [icon]="'ac_unit'" [count]="temperaturaAr + ' °C'" [label]="'Temperatura'"></app-stat>
     </div>
     <div fxFlex="calc(33.33333% - 20)">
-        <app-stat [bgClass]="'info'" [icon]="'wb_cloudy'" [count]="'30%'" [label]="'Umidade'"></app-stat>
+        <app-stat [bgClass]="'info'" [icon]="'wb_cloudy'" [count]="humidadeAr + '%'" [label]="'Umidade'"></app-stat>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
 </div>
 <div class="mb-20" fxLayout="row warp" fxFlex fxLayoutGap="20px">
     <div class="pointer" fxFlex="calc(33.33333% - 20)" (click)="alterar()">
-        <app-stat [bgClass]="(true) ? 'warn' : 'cinza'" [icon]="'wb_incandescent'" [count]="'On'"
+        <app-stat [bgClass]="(statusLamp) ? 'warn' : 'cinza'" [icon]="'wb_incandescent'" [count]="statusLamp ? 'On' : 'Off'"
                   [label]="'Luz'"></app-stat>
     </div>
 </div>

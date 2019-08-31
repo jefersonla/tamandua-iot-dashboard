@@ -9,7 +9,7 @@
             </div>
             <ng-container *ngIf="!sucesso">
                 <div class="text-center">
-                    <h2 class="app-name">Cadastro</h2>
+                    <h2 class="app-name">Resetar Senha</h2>
                 </div>
                 <div *ngIf="errorLogin" class="text-center danger">
                     Erro ao validar seu e-mail, verifique se está correto.
@@ -25,8 +25,9 @@
 
                 <div fxFlex fxLayout="row" fxLayout.lt-md="column">
                     <div fxFlexFill>
-                        <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid"
-                                (click)="alterarSenha()">Login
+                        <button mat-raised-button color="primary" class="w-100" [disabled]="form.invalid || aguardando"
+                                (click)="alterarSenha()">
+                            Resetar Senha
                         </button>
                     </div>
                 </div>
