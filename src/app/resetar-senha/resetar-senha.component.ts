@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
@@ -16,8 +15,7 @@ export class ResetarSenhaComponent implements OnInit {
     aguardando: boolean;
 
     constructor(private fb: FormBuilder,
-                private angularFireAuth: AngularFireAuth,
-                private router: Router) {
+                private angularFireAuth: AngularFireAuth) {
         this.form = fb.group({
             email: [null, [Validators.required, Validators.email]],
         });
